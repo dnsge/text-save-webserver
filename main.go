@@ -105,7 +105,6 @@ func Get(c *gin.Context) {
 		seconds := int(ttl.Seconds()) % 60
 		expiresString := fmt.Sprintf("%d min %d sec", minutes, seconds)
 
-		// c.Header("Cache-Control", "public, max-age=" + strconv.Itoa(int(ttl.Seconds())))
 		c.HTML(http.StatusOK, "record.html", gin.H{
 			"text":    value,
 			"code":    code,
